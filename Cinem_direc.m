@@ -15,21 +15,22 @@ syms q1 q2 q3 q4 q5 q6;
 
 %%
 %
-L1=330
-L2=88
-L3=310
-L4=40
-L5=305
-L6=86.5
-L(1) = Link('revolute'   ,'alpha',      0,  'a',  0,     'd',   L1 , 'offset',     0, 'qlim',  [-2*pi/3 2*pi],   'modified');
-L(2) = Link('revolute'   ,'alpha',  -pi/2,  'a',  L2,     'd',    0 , 'offset',-pi/2, 'qlim',  [-2*pi/3 2*pi],   'modified');
-L(3) = Link('revolute'   ,'alpha',      0,  'a', L3,     'd',    0 , 'offset', 0, 'qlim',  [-2*pi/3 2*pi],   'modified');
-L(4) = Link('revolute'   ,'alpha',  -pi/2,  'a',  L4,     'd',   L5 , 'offset',  0, 'qlim',  [-2*pi/3 2*pi],   'modified');
-L(5) = Link('revolute'   ,'alpha',   pi/2,  'a',  0,     'd',    0 , 'offset',     0, 'qlim',  [-2*pi/3 2*pi],   'modified');
-L(6) = Link('revolute'   ,'alpha',  -pi/2,  'a',  0,     'd',   L6 , 'offset',     0, 'qlim',  [-2*pi/3 2*pi],   'modified');
-bot1=SerialLink(L5,'name','Yaskawa MH5')
+L1=330;
+L2=88;
+L3=310;
+L4=40;
+L5=305;
+L6=86.5;
+L(1) = Link('revolute','alpha',      0,  'a', 0,'d',L1,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
+L(2) = Link('revolute','alpha',  -pi/2,  'a',L2,'d', 0,'offset',-pi/2, 'qlim',[-2*pi/3 2*pi],'modified');
+L(3) = Link('revolute','alpha',      0,  'a',L3,'d', 0,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
+L(4) = Link('revolute','alpha',  -pi/2,  'a',L4,'d',L5,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
+L(5) = Link('revolute','alpha',   pi/2,  'a', 0,'d', 0,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
+L(6) = Link('revolute','alpha',  -pi/2,  'a', 0,'d',L ,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
+bot1=SerialLink(L,'name','Yaskawa MH5')
+R_t=eye(3)*roty(pi/2)*rotz(pi);
 P_t=[0 0 0 1]';
-bot1.tool=[[R_t;[0 0 0]], P_t]
+bot1.tool=[[R_t;[0 0 0]], P_t];
 %bot1.teach([0 0 0 0 0 0])
 %bot1.plot([0 0 0 0 0 0],'workspace',[-3 3 -3 3 7], 'noa', 'view',[300 30])
 %
