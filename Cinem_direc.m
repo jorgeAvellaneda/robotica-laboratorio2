@@ -26,9 +26,15 @@ L(2) = Link('revolute','alpha',  -pi/2,  'a',L2,'d', 0,'offset',-pi/2, 'qlim',[-
 L(3) = Link('revolute','alpha',      0,  'a',L3,'d', 0,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
 L(4) = Link('revolute','alpha',  -pi/2,  'a',L4,'d',L5,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
 L(5) = Link('revolute','alpha',   pi/2,  'a', 0,'d', 0,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
+<<<<<<< Updated upstream
 L(6) = Link('revolute','alpha',  -pi/2,  'a', 0,'d',L6,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
 bot1=SerialLink(L,'name','Yaskawa MH5')
 % R_t=eye(3)*roty(pi/2)*rotz(pi);
+=======
+L(6) = Link('revolute','alpha',  -pi/2,  'a', 0,'d',L6 ,'offset',    0, 'qlim',[-2*pi/3 2*pi],'modified');
+bot1=SerialLink(L,'name','Yaskawa MH5')
+% R_t=eye(3);
+>>>>>>> Stashed changes
 % P_t=[0 0 0 1]';
 % bot1.tool=[[R_t;[0 0 0]], P_t];
 %bot1.teach([0 0 0 0 0 0])
